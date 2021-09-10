@@ -277,8 +277,8 @@ class InputSpinner extends Component {
 			? this.props.decimalSeparator
 			: ".";
 		if (
-			String(num).endsWith(separator) &&
-			!this.getValue().endsWith(separator + "0")
+			String(num).endsWith(separator) //&&
+			// !this.getValue().endsWith(separator + "0")
 		) {
 			this.decimalInput = true;
 		}
@@ -324,7 +324,7 @@ class InputSpinner extends Component {
 			}
 		}
 
-		this.setState({value: num});
+		this.setState({value: num.toFixed(2)});
 	}
 
 	/**
